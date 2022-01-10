@@ -2,6 +2,7 @@ import os
 import nextcord
 import random 
 import datetime
+import dotenv
 from nextcord.ext import commands
 from nextcord.utils import get
 from nextcord.ext.commands import has_role
@@ -18,7 +19,7 @@ async def on_ready():
             
       print(f'{client.user} is connected to the following guild:\n'
           f'{guild.name}(id: {guild.id})')
-my_secret = os.environ['token']
+my_secret = os.environ['TOKEN']
 
 @client.command(name = 'setup', help= 'sets up bot and blacklist channels')
 async def make_chan(ctx):
@@ -92,4 +93,4 @@ async def maps(ctx, *, map = None ):
 
 
 
-client.run('token')
+client.run('TOKEN')

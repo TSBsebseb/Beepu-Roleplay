@@ -8,7 +8,7 @@ from nextcord.ext.commands import has_role
 
 intents = nextcord.Intents.all()
 intents.members = True
-client = commands.Bot(command_prefix="*",intents=intents)
+client = commands.Bot(command_prefix="Br."or'br.',intents=intents)
 
 @client.event
 async def on_ready():
@@ -18,7 +18,7 @@ async def on_ready():
             
       print(f'{client.user} is connected to the following guild:\n'
           f'{guild.name}(id: {guild.id})')
-
+my_secret = os.environ['token']
 
 @client.command(name = 'setup', help= 'sets up bot and blacklist channels')
 async def make_chan(ctx):
@@ -60,7 +60,12 @@ async def make_chan(ctx):
 
 
 #set a list of maps by urban and milsim 
-urban = ['Suburbia', 'Backstreets', 'quarantine', 'Vacant', 'The Hook 2.0']
+urban = ['Suburbia', 
+         'Backstreets', 
+         'quarantine', 
+         'Vacant', 
+         'The Hook 2.0']
+
 milsim = ["Downfall",
       "Kashlan",
       "Al-Madinah",
@@ -71,7 +76,7 @@ milsim = ["Downfall",
       "The Hook 2.0"]
 
 
-
+#make map command to get a random map 
 @client.command(name = 'map',help = 'generates a map for rp ') 
 async def maps(ctx, *, map = None ):
   if map =='urban':
@@ -79,7 +84,7 @@ async def maps(ctx, *, map = None ):
   elif map == 'milsim':
     map = milsim
   map_choice = random.choice(map)
-  ctx.send(f'your {map} map is {map_choice}')
+  await ctx.send(f'your map is {map_choice}')
 
 
 

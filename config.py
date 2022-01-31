@@ -1,2 +1,2 @@
 import os
-my_secret = os.environ['token']
+my_secret = os.environ['TOKEN']
